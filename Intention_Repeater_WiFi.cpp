@@ -119,7 +119,7 @@ int main() {
 
         auto now = chrono::steady_clock::now();
         if (chrono::duration_cast<chrono::seconds>(now - lastUpdate).count() >= 1) {
-            cout << "\rBroadcasting: " << formatNumber(count) << " Repetitions [" << formatFreq(freq) << "]" << string(5, ' ');
+            cout << "\rBroadcasting: " << formatNumber(count) << " Repetitions [" << formatFreq(freq) << "]" << string(5, ' ') << "\r";
             cout.flush();
             lastUpdate = now;
             freq = 0;
