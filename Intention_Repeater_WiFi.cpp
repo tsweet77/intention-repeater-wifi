@@ -226,7 +226,7 @@ int main()
                     totalFreq += threadFreq[i].load();
                     threadFreq[i] = 0;
                 }
-                cout << "\rBroadcasting: [" << formatTime(seconds) << "] " << formatNumber(totalIterations * multiplier) << " Repetitions (" << formatFreq(totalFreq * multiplier) << ")" << string(5, ' ') << "\r";
+                cout << "\rBroadcasting: [" << formatTime(seconds) << "] " << formatNumber(totalIterations * multiplier) << " Repetitions (" << formatFreq(totalFreq * multiplier) << ")" << string(10, ' ') << "\r";
                 cout.flush();
                 std::this_thread::sleep_for(std::chrono::milliseconds(10)); // Adjust based on required rate
                 lastUpdate = now;
@@ -250,7 +250,7 @@ int main()
             auto now = chrono::steady_clock::now();
             if (chrono::duration_cast<chrono::milliseconds>(now - lastUpdate).count() >= 1000)
             {
-                cout << "\rBroadcasting: [" << formatTime(seconds) << "] " << formatNumber(threadIterations[0].load() * multiplier) << " Repetitions (" << formatFreq(threadFreq[0].load() * multiplier) << ")" << string(5, ' ') << "\r";
+                cout << "\rBroadcasting: [" << formatTime(seconds) << "] " << formatNumber(threadIterations[0].load() * multiplier) << " Repetitions (" << formatFreq(threadFreq[0].load() * multiplier) << ")" << string(10, ' ') << "\r";
                 cout.flush();
                 std::this_thread::sleep_for(std::chrono::milliseconds(10)); // Adjust based on required rate
                 lastUpdate = now;
