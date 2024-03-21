@@ -138,15 +138,19 @@ std::pair<std::string, int> multiplyIntention(const std::string &intention, cons
     while (intention_multiplied.length() + intention.length() <= buffer_size)
     {
         intention_multiplied += intention;
+        ++multiplier; // Increment the counter each time the intention is appended
     }
 
-    // Hash the value and multiply it.
-    hashed_intention = picosha2::hash256_hex_string(intention_multiplied);
-    intention_multiplied = "";
-    while (intention_multiplied.length() + hashed_intention.length() <= buffer_size)
-    {
-        intention_multiplied += hashed_intention;
-        ++multiplier; // Increment the counter each time the intention is appended
+    if (use_hashing=="y") {
+        // Hash the value and multiply it.
+        hashed_intention = picosha2::hash256_hex_string(intention_multiplied);
+        intention_multiplied = "";
+        multiplier = 0;
+        while (intention_multiplied.length() + hashed_intention.length() <= buffer_size)
+        {
+            intention_multiplied += hashed_intention;
+            ++multiplier;
+        }
     }
 
     // Return the multiplied intention and the multiplier
