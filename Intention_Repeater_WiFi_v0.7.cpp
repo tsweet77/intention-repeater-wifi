@@ -24,7 +24,7 @@ long long ErrCount = 0;
 long long seconds = 0;
 
 const int NUM_THREADS = 8;
-const long long MULTIPLIER = 1E3;
+const long long MULTIPLIER = 5E2;
 
 vector<SOCKET> threadSocks(NUM_THREADS, INVALID_SOCKET);
 vector<atomic<long long>> threadIterations(NUM_THREADS);
