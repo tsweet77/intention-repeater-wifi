@@ -1,5 +1,5 @@
 /*
-Intention Repeater WiFi v0.3
+Intention Repeater WiFi v0.4
 Created by Anthro Teacher and WebGPT.
 To compile: g++ -O3 -static -Wall Intention_Repeater_WiFi.cpp -o Intention_Repeater_WiFi.exe -lws2_32
 */
@@ -62,7 +62,7 @@ string formatFreq(long long count) {
 int main() {
     signal(SIGINT, signalHandler);
 
-    cout << "Intention Repeater WiFi v0.3" << endl;
+    cout << "Intention Repeater WiFi v0.4" << endl;
     cout << "by Anthro Teacher and WebGPT and Claude 3 Opus" << endl << endl;
     cout << "Enter your Intention: ";
     string intention;
